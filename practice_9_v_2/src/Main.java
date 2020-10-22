@@ -2,12 +2,16 @@ import java.util.Scanner;
 
 public class Main {
 
+    private static int length;
     public static void main(String[] args)
     {
-        int[] arr = new int[10];
         Scanner in = new Scanner(System.in);
-        System.out.print("Введите 10 положительных чисел массива для сортировки:");
-        for(int i=0;i<10;i++)
+        System.out.print("Введите длину массива:");
+        length = in.nextInt();
+        int[] arr = new int[length];
+
+        System.out.print("Введите числа для сортировки:");
+        for(int i=0;i<length;i++)
             arr[i] = in.nextInt();
 
         Variant_1 variant1 = new Variant_1();

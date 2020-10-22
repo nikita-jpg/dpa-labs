@@ -1,9 +1,9 @@
-class NodeBST {
+class Host {
     int value;
-    NodeBST left;
-    NodeBST right;
+    Host left;
+    Host right;
 
-    NodeBST(int value) {
+    Host(int value) {
         this.value = value;
         right = null;
         left = null;
@@ -12,11 +12,12 @@ class NodeBST {
 
 public class BinaryTree {
 
-    NodeBST root;
+    Host root;
 
-    private NodeBST addRecursive(NodeBST current, int value) {
+
+    private Host addRecursive(Host current, int value) {
         if (current == null) {
-            return new NodeBST(value);
+            return new Host(value);
         }
 
         if (value < current.value) {
@@ -32,8 +33,9 @@ public class BinaryTree {
         root = addRecursive(root, value);
     }
 
+    //ПОИСК ЭЛЕМЕНТА
 
-    private boolean isContainNodeRecursive(NodeBST current, int value) {
+    private boolean isContainNodeRecursive(Host current, int value) {
         if (current == null) {
             return false;
         }
@@ -49,8 +51,9 @@ public class BinaryTree {
         return isContainNodeRecursive(root, value);
     }
 
+    //УДАЛЕНИЕ ЭЛЕМЕНТА
 
-    private NodeBST deleteRecursive(NodeBST current, int value) {
+    private Host deleteRecursive(Host current, int value) {
         if (current == null) {
             return null;
         }
@@ -80,7 +83,7 @@ public class BinaryTree {
         return current;
     }
 
-    private int findSmallestValue(NodeBST root) {
+    private int findSmallestValue(Host root) {
         return root.left == null ? root.value : findSmallestValue(root.left);
     }
 
@@ -88,13 +91,13 @@ public class BinaryTree {
         root = deleteRecursive(root, value);
     }
 
-    private void printBinaryTree(NodeBST nodeBST, int level) {
-        if (nodeBST != null) {
-            printBinaryTree(nodeBST.right, level + 1);
+    private void printBinaryTree(Host host, int level) {
+        if (host != null) {
+            printBinaryTree(host.right, level + 1);
             for (int i = 0; i < level; i++)
                 System.out.print("   ");//чем ниже уровень, тем отступ больше
-            System.out.println(nodeBST.value);
-            printBinaryTree(nodeBST.left, level + 1);
+            System.out.println(host.value);
+            printBinaryTree(host.left, level + 1);
         }
     }
     public void printTree(){
