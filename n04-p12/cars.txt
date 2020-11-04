@@ -1,0 +1,3 @@
+0 mercedes Ivanov n
+1 bmw Sidorov y
+2 audi Smirnov n
